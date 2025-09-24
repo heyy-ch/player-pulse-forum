@@ -6,6 +6,34 @@
 All colors MUST be HSL.
 */
 
+/* Gaming Background Utilities */
+.gaming-bg {
+  background-image: url('./assets/anime-gaming-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.gaming-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    hsl(var(--background) / 0.85) 0%, 
+    hsl(var(--background) / 0.90) 50%,
+    hsl(var(--background) / 0.85) 100%);
+  z-index: 1;
+}
+
+.gaming-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
